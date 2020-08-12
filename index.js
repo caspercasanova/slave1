@@ -1,11 +1,18 @@
+// Emails and PWS
 require('dotenv').config()
+// Library
 const puppeteer = require('puppeteer');
+const { random, redditPickUpLines } = require('./utilities')
 
 const EMAIL = process.env.EMAIL || 'johnDoe@gmail.com';
 const TINDER_PW = process.env.TINDER_PW || 'something';
 
-const { random } = require('./utilities')
 
+
+
+
+// Tinder requires location
+// for local singles functionality
 const LAXCoords = {
   latitude: 33.942791,
   longitude: -118.410042
@@ -16,23 +23,14 @@ const USCCoords = {
 };
 
 
+// Beginning the scraper bot
+;(async () => {
+  // Pull 25 pickup lines from reddit
+  // These are probably some of the worths 
+  // words ever written by man
+  const pickUpLines = await redditPickUpLines()
 
 
-
-let pickUpLines = [
-  'What did the bot say to the girl?',
-  'I’m the droid you’re looking for.',
-  'You make my interface GUI',
-  '¿ gOt a RoBoT kInK ?',
-  'Skiddy Beep Bop',
-  '"They said take off my jacket..."',
-  'Want to grab some Java?',
-  'ERROR ERROR: cAnNot ComPuTe bEaUty',
-  'my homie r2d2 thinks u cute',
-];
-
-
-(async () => {
   const browser = await puppeteer.launch({
     headless: false, 
     args: [
