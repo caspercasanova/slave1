@@ -5,11 +5,17 @@
   - Eager to creatively explore other social media sites.
 ---
 ## Info: 
-  - This is currently a ..t_i.. ..n_d.. ..e_r.. bot 
+  - This is currently a couple bot projects
+## Soundcloud Bot 
+  - Will Find My Most Recently Liked Track
+  - Will Post The Track To Twitter If I Have Not ALreayd Posted It
+## Tinder Bot -Not Updated
     - Can Login to Tinder.com
     - Can swipe right
       - If a match occurs will drop a random pick up line 
   - Also there is an instagram login script
+## Insta Bot
+  - Can Sign Into Instagram
 ---
 ## Contact 
   - I am curently looking for a career with a team that loves obscure and creative implementations of tech. 
