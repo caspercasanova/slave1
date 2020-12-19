@@ -103,7 +103,7 @@ const client = new Twitter({
 	console.log(link_urls[0].split("/"));
 	let splitLink = link_urls[0].split("/");
 
-	let post = `${randomDJPhrase()}\n@${sanitizeDjName(splitLink[splitLink.length - 2])}\n${
+	let post = `${randomDJPhrase()}\n#SoundBrain\n@${sanitizeDjName(splitLink[splitLink.length - 2])}\n${
 		splitLink[splitLink.length - 1]
 	}\n${link_urls[0]}`;
 
@@ -113,8 +113,8 @@ const client = new Twitter({
 		if (error) {
 			console.error(tweets);
 		}
-
-		const sortedTweets = tweets.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+		let filteredTweets = tweets.filter((tweet) => tweet.text.includes("#SoundBrain"));
+		const sortedTweets = filteredTweets.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 		console.log(sortedTweets);
 
 		if (sortedTweets[0].text.includes(splitLink[splitLink.length - 1])) {
