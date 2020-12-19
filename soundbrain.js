@@ -68,7 +68,7 @@ const client = new Twitter({
 	const browser = await puppeteer.launch({
 		headless: true,
 		// args: ["--start-maximized"],
-		// args: ['--no-sandbox'],
+		args: ["--no-sandbox"],
 	});
 
 	const soundCloud = await browser.newPage();
